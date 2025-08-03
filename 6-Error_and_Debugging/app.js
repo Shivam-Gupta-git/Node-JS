@@ -6,6 +6,7 @@ const server = http.createServer((req, res)=>{
   console.log(req.url, req.method)
   // testingSyntax();
   // runtimeErrorHandle();
+  // Error Handling.....
   logicalErrorHandel()
   return res.end();
 });
