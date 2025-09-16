@@ -1,0 +1,20 @@
+<%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/nav') %>
+  <main class="w-[100%] flex items-center justify-center flex-col ">
+    <div class="w-[100%] flex items-center justify-center">
+      <h1 class=" font-bold text-red-600 mt-2 text-2xl">Here are our registered homes</h1>
+    </div>
+    <div class="w-[100%] h-[300px] mt-2">
+      <ul class=" p-5  ">
+        <% registrationHome.forEach(home => { %>
+         <li class="w-[80%] h-[60px] border p-5 flex items-center mt-2 rounded shadow-xl ">🏠
+          <%= home.HouseName %>
+         </li>
+       <% }) %>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
