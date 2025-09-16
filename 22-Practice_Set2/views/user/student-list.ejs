@@ -1,0 +1,19 @@
+<%- include('../partials/head') %>
+
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-100 min-h-screen font-sans">
+  <%- include('../partials/nav') %>
+  <main class="flex flex-col items-center justify-center py-12 px-4">
+    <h1 class="text-3xl font-bold text-gray-800 mb-2 tracking-wide">Student List</h1>
+    <div class="w-[90%] flex flex-col gap-3 ">
+      <% registeredStudent.forEach((student)=>{ %>
+        
+        <div  class=" bg-white/70 backdrop-blur-md shadow-2xl rounded-3xl overflow-hidden border border-blue-200 px-8 py-4 flex items-center space-y-5">
+          <h1>StudentName: <%= student.studentName %></h1>
+        </div>  
+      <% }) %>
+
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<%- include('../partials/head') %>
+<body>
+  <%- include('../partials/nav') %>
+
+  <div class="mt-9 flex flex-row justify-around">
+
+    <%  productItems.forEach(items => { %>
+
+      <div class="max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <img class="w-full h-[250px] object-cover" src="<%= items.image %>" alt="<%= items.image %>">
+    
+        <div class="p-5 ">
+          <!-- Product Name -->
+          <h2 class="text-xl font-light text-black-600"><%= items.productName%></h2>
+    
+          <!-- Company -->
+        <p class="font-medium text-gray-700"><%= items.  companyName%></p>
+    
+          <!-- Category -->
+           <p class="font-medium text-gray-700"><%= items.category%></p>
+    
+          <!-- Description -->
+          <p class="text-gray-600 text-sm"><%= items.description%></p>
+    
+          <!-- Price -->
+          <div class="flex justify-between items-center pt-3">
+            <span class="text-lg font-semibold text-green-600">₹<%= items.price %></span>
+          </div>
+          <div class="flex flex-row gap-5 items-center">
+            <a class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition" href="/host-edit-items/<%= items.id %>?editing=true">Edit</a>
+            <form action="/delete-items/<%= items.id %>" method="POST">
+              <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
+                Delete
+              </button>
+            </form>
+          </div>
+          </div>
+        </div> 
+        <% }) %>
+      </div>
+
+</div>
+</body>
+</html>

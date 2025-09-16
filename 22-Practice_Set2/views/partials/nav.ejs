@@ -1,0 +1,36 @@
+<header class="w-full bg-slate-600/80 backdrop-blur-sm shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-[60px]">
+      
+      <!-- Brand / Logo -->
+      <div class="flex-shrink-0 text-white font-bold text-xl tracking-wide">
+        <a href="#">Student Portol</a>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex gap-6">
+
+        <a class="<%= currentPage === 'Student List' ? 'bg-gray-400 border-2 text-cyan-800' : 'hover:bg-gray-400' %> text-white hover:text-black transition duration-300 px-3 py-1.5 rounded-lg"
+          href="/">Student List</a>
+
+        <a class="<%= currentPage === 'Host Student List' ? 'bg-gray-400 border-2 text-cyan-800' : 'hover:bg-gray-400' %> text-white hover:text-black transition duration-300 px-3 py-1.5 rounded-lg"
+            href="/host-student-list">Host Student List</a>  
+
+        <a class="<%= currentPage === 'Add Student' ? 'bg-gray-400 border-2 text-cyan-800' : 'hover:bg-gray-400' %> text-white hover:text-black transition duration-300 px-3 py-1.5 rounded-lg"
+        href="/add-student">Add Student</a>
+
+
+      <!-- Optional: Hamburger for Mobile -->
+      <div class="md:hidden text-white">
+        <!-- If using JS: toggle a mobile menu here -->
+        <button class="focus:outline-none" aria-label="Open Menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>

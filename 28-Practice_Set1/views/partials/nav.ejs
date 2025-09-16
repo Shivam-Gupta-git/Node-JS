@@ -1,0 +1,50 @@
+<!-- Navbar -->
+<nav class="bg-white shadow-md sticky top-0 left-0 z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="#" class="text-2xl font-bold text-blue-600">MyWebsite</a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8">
+
+        <a href="/" class="<%=  currentPage === 'Home Page' ? 'text-blue-600' : 'text-gray-700' %>  hover:text-blue-600 font-medium">Home</a>
+
+        <a href="itemsList" class="<%=  currentPage === 'Items List' ? 'text-blue-600' : 'text-gray-700' %>  hover:text-blue-600 font-medium">Items List</a>
+
+        <a href="/host-item-list" class="<%= currentPage === 'Host Items List' ? ' text-blue-600' : 'text-gray-700' %> hover:text-blue-600 font-medium">Host Items List</a>
+
+        <a href="/add-items" class="<%= currentPage === 'host Add Items' ? ' text-blue-600' : 'text-gray-700' %> hover:text-blue-600 font-medium">Add Items</a>
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-btn" class="text-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="menu" class="hidden md:hidden">
+    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Home</a>
+    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Add Items</a>
+  </div>
+</nav>
+
+<!-- Script for Mobile Menu Toggle -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>

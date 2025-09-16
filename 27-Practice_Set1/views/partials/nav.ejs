@@ -1,0 +1,79 @@
+
+  <!-- Header/Navbar -->
+  <header class="w-full bg-white backdrop-blur-sm shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[60px]">
+
+        <!-- Lodo and Date Picker -->
+        <div class="flex flex-row w-[35%] justify-between" >
+              <!-- Logo -->
+          <div class="text-black font-bold text-xl tracking-wide">
+            <a href="#">To-Do List</a>
+          </div>
+        </div>
+    
+          <!-- Add Task Button -->
+          <div>
+            <button id="openModal"
+              class="bg-blue-200 text-blue-600 px-4 py-1 rounded-xl font-bold hover:text-blue-800 transition">
+              ➕ Add Task
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Popup Modal -->
+  <div id="taskModal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-50">
+    <form action="/todo-submit" method="POST" class="bg-white w-[90%] max-w-md p-6 rounded-xl shadow-xl relative">
+      <h2 class="text-lg font-semibold mb-3">New Task</h2>
+
+      <textarea 
+      rows="4" 
+      placeholder="Write your task here..."
+      name="TodoItemsName"
+      class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+      <h2 class="text-lg font-semibold mt-5">New Date</h2>
+      <div class="flex items-center space-x-4 ">
+        <input type="date" name="TodoItemsDate" class="border rounded px-3 py-1" />
+      </div>
+
+      <div class="mt-4 flex justify-end space-x-2">
+        <button id="closeModal"
+          class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400">Cancel</button>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- JavaScript to Toggle Modal -->
+  <script>
+    const modal = document.getElementById("taskModal");
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.getElementById("closeModal");
+
+    openBtn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+
+    // Optional: Close modal when clicking outside the box
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+      }
+    });
+  </script>
+
+  <!-- Side Nav Open Button -->
+  <button id="openSideNav" class="md:hidden bg-blue-600 text-white px-3 py-1 rounded-xl font-bold hover:bg-blue-700 transition ml-2">
+    &#9776;
+  </button>
+
+<%- include('side-nav') %>
