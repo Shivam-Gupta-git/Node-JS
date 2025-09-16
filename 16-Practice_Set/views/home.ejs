@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body>
+  <header class="w-[100%] h-[60px] bg-slate-600 flex items-center p-5 gap-10">
+    <a class="text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="#">Go to Home</a>
+    <a class="text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="/add-home-page">Add Home</a>
+  </header>
+  <main class="w-[100%] flex items-center justify-center flex-col ">
+    <div class="w-[100%] flex items-center justify-center">
+      <h1 class=" font-bold text-red-600 mt-2 text-2xl">Here are our registered homes</h1>
+    </div>
+    <div class="w-[100%] h-[300px] mt-2">
+      <ul class=" p-5  ">
+        <% registrationHome.forEach(home =>{ %>
+          <li class="w-[80%] h-[60px] border p-5 flex items-center mt-2 rounded shadow-xl ">🏠
+            <%= home.HouseName %> 
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  
+  </main>
+</body>
+</html>

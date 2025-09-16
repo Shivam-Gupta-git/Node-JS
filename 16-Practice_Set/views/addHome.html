@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body>
+  <header class="w-[100%] h-[60px] bg-slate-600 flex items-center p-5 gap-10">
+    <a class="text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="/">Go to Home</a>
+    <a class="text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="/add-home-page">Add Home</a>
+  </header>
+  <main class="w-[100%] flex items-center justify-center">
+    <form action="/showMessage-page" method="POST" class="w-[50%] h-[300px] border mt-10 rounded shadow-xl flex items-center justify-center flex-col">
+      <h1 class="text-2xl font-bold">Register Your Home on AiRBnB</h1>
+      <input class="outline-none border  w-[48%] p-1 rounded mt-2" type="text" name="text" placeholder="Enter Your House Name">
+      <input class="border p-1 rounded mt-2 w-[48%] bg-slate-600 text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out" type="submit" value="submit">
+    </form>
+  </main>
+</body>
+</html>
