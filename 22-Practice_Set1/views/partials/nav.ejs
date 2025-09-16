@@ -1,0 +1,53 @@
+  <!-- Add Alpine.js to <head> if not already included -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<header x-data="{ open: false }" class="w-full h-[60px] bg-slate-300 flex items-center sticky top-0 left-0 z-50 shadow-md px-4 md:px-10">
+
+
+  <div class="flex-1">
+    <h1 class="text-xl font-bold text-blue-700">Student Portal</h1>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <ul class="hidden md:flex flex-row gap-10">
+    <li>
+      <a class="<%= currentPage === 'Student Home Page' ? 'border-b border-blue-600' : 'hover:text-blue-600' %> text-blue-500 text-lg px-4 py-1 transition"
+         href="/">Home</a>
+    </li>
+    <li>
+      <a class="<%= currentPage === 'Student Lists' ? 'border-b border-blue-600' : 'hover:text-blue-600' %> text-blue-500 text-lg px-4 py-1 transition"
+         href="/student-lists">Student Lists</a>
+    </li>
+    <li>
+      <a class="<%= currentPage === 'Host Student List' ? 'border-b border-blue-600' : 'hover:text-blue-600' %> text-blue-500 text-lg px-4 py-1 transition"
+         href="/host-student-lists">Host Student Lists</a>
+    </li>
+    <li>
+      <a class="<%= currentPage === 'Add Student' ? 'border-b border-blue-600' : 'hover:text-blue-600' %> text-blue-500 text-lg px-4 py-1 transition"
+         href="/add-student">Add Students</a>
+    </li>
+  </ul>
+
+  <!-- Hamburger Button (Mobile) -->
+  <button @click="open = !open" class="block md:hidden focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-700" fill="none" viewBox="0 0 24 24"
+      stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Mobile Dropdown Menu -->
+  <div x-show="open" @click.away="open = false"
+       class="absolute top-[60px] left-0 w-full bg-white shadow-lg md:hidden flex flex-col items-start gap-4 px-6 py-4 z-40">
+
+    <a class="<%= currentPage === 'Student Home Page' ? 'text-blue-700 font-semibold' : 'text-gray-700 hover:text-blue-600' %> text-base"
+       href="/">Home</a>
+
+    <a class="<%= currentPage === 'Student Lists' ? 'text-blue-700 font-semibold' : 'text-gray-700 hover:text-blue-600' %> text-base"
+       href="/student-lists">Student Lists</a>
+
+    <a class="<%= currentPage === 'Add Student' ? 'text-blue-700 font-semibold' : 'text-gray-700 hover:text-blue-600' %> text-base"
+       href="/add-student">Add Students</a>
+  </div>
+</header>

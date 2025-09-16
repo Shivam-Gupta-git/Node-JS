@@ -1,0 +1,89 @@
+<%- include('../partials/head') %>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-100 min-h-screen font-sans">
+  <%- include('../partials/nav') %>
+
+  <main class="flex items-center justify-center py-12 px-4">
+    <div class="w-[90%] bg-white/70 backdrop-blur-md shadow-2xl rounded-3xl overflow-hidden border border-blue-200">
+
+      <!-- Header Section -->
+      <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white text-center relative">
+        <img src="<%= student.StudentPhotoUrl %>" alt="Student Photo"
+             class="w-32 h-32 object-cover rounded-full border-4 border-white shadow-lg mx-auto -mb-16 relative z-10">
+        <h2 class="text-3xl font-bold mt-20"><%= student.StudentName %></h2>
+        <p class="text-sm text-blue-100"><%= student.StudentEnroll %></p>
+      </div>
+
+      <!-- Body Section -->
+      <div class="px-10 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Left Column -->
+        <div class="space-y-5">
+          <div>
+            <p class="text-gray-600 font-medium">Date of Birth</p>
+            <p class="text-gray-900"><%= student.StudentDOB %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Gender</p>
+            <p class="text-gray-900"><%= student.StudentGender %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Email</p>
+            <p class="text-gray-900 break-all"><%= student.StudentEmail %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Phone Number</p>
+            <p class="text-gray-900"><%= student.StudentNumber %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Guardian's Name</p>
+            <p class="text-gray-900"><%= student.StudentGuardiansName %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Guardian's Phone</p>
+            <p class="text-gray-900"><%= student.StudentGuardiansNumber %></p>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-5">
+          <div>
+            <p class="text-gray-600 font-medium">City</p>
+            <p class="text-gray-900"><%= student.StudentCity %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">State</p>
+            <p class="text-gray-900"><%= student.StudentState %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Pin Code</p>
+            <p class="text-gray-900"><%= student.StudentPinCode %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Address</p>
+            <p class="text-gray-900"><%= student.StudentAddress %></p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Course</p>
+            <p class="text-gray-900">B.Tech</p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-medium">Session</p>
+            <p class="text-gray-900">
+              <%= student.StudentStartSession %> - <%= student.StudentEndSession %>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-gray-100 border-t px-6 py-4 text-center">
+        <a href="/student-lists"
+           class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-700 transition-all duration-300">
+          ← Back to List
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

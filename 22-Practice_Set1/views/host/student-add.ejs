@@ -1,0 +1,127 @@
+<%- include('../partials/head') %>
+</head>
+<body>
+  <%- include('../partials/nav') %>
+  <div class="w-full flex items-center justify-center mt-5">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-[90%]">
+      <h1 class="text-2xl font-bold text-center text-blue-700 mb-6"><%= editing ? 'Change in Student Form' : 'Student Registration Form' %></h1>
+      
+      <form action="<%= editing ? '/edited-student' : '/student-added' %>" method="POST" class="space-y-5">
+        <!-- input For taking id  -->
+        <input type="hidden" name="id" value="<%= editing ? student.id : '' %>">
+        <!-- Full Name -->
+        <div>
+          <label class="block mb-1 font-medium">Full Name</label>
+          <input type="text" name="StudentName" placeholder="Enter your full name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required value="<%= editing ? student.StudentName : '' %>"/>
+        </div>
+
+        <!-- Enrollment Name -->
+        <div>
+          <label class="block mb-1 font-medium">Enrollment Number</label>
+          <input type="text" name="StudentEnroll" placeholder="Enter your Enrollment Number" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required value="<%= editing ? student.StudentEnroll : '' %>"/>
+        </div>
+  
+        <!-- Date of Birth -->
+        <div>
+          <label class="block mb-1 font-medium">Date of Birth</label>
+          <input type="date" name="StudentDOB" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required value="<%= editing ? student.StudentDOB : '' %>"/>
+        </div>
+  
+        <!-- Gender -->
+        <div>
+          <label class="block mb-1 font-medium">Gender</label>
+          <div class="flex space-x-4">
+            <label class="flex items-center">
+              <input type="radio" name="StudentGender"  class="mr-2" required value="<%= editing ? student.StudentName : 'Male' %>"> Male
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="StudentGender"  class="mr-2" required value="<%= editing ? student.StudentName : 'Female' %>"> Female
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="StudentGender"  class="mr-2" required
+              value="<%= editing ? student.StudentName : 'Other' %>"> Other
+            </label>
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div>
+          <label class="block mb-1 font-medium">Email</label>
+          <input type="email" name="StudentEmail" placeholder="Enter your email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required
+          value="<%= editing ? student.StudentEmail : '' %>"/>
+        </div>
+  
+        <!-- Phone Number -->
+        <div>
+          <label class="block mb-1 font-medium">Phone Number</label>
+          <input type="tel" name="StudentNumber" placeholder="Enter your phone number" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required value="<%= editing ? student.StudentNumber : '' %>"/>
+        </div>
+  
+        <!-- Address -->
+        <div>
+          <label class="block mb-1 font-medium">Address</label>
+          <textarea name="StudentAddress" placeholder="Enter your address" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required><%= editing ? student.StudentAddress : '' %></textarea>
+        </div>
+
+         <!-- City, State, Zip -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label class="block mb-1 font-medium">City</label>
+          <input type="text" name="StudentCity" class="w-full px-4 py-2 border rounded-md" required value="<%= editing ? student.StudentCity : '' %>"/>
+        </div>
+        <div>
+          <label class="block mb-1 font-medium">State</label>
+          <input type="text" name="StudentState" class="w-full px-4 py-2 border rounded-md" required value="<%= editing ? student.StudentState : '' %>"/>
+        </div>
+        <div>
+          <label class="block mb-1 font-medium">Pin Code</label>
+          <input type="text" name="StudentPinCode" class="w-full px-4 py-2 border rounded-md" required value="<%= editing ? student.StudentPinCode : '' %>"/>
+        </div>
+      </div>
+  
+        <!-- Course Selection -->
+        <div>
+          <label class="block mb-1 font-medium">Select Course</label>
+          <select class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option name="CourseName">-- Choose Course --</option>
+            <option value="btech">B.Tech</option>
+            <option value="bsc">B.Sc</option>
+            <option value="bca">BCA</option>
+            <option value="mba">MBA</option>
+          </select>
+        </div>
+
+        <!-- Session -->
+        <div>
+          <label class="block mb-1 font-medium">Enter Session</label>
+          <input type="text" name="StudentStartSession" class="w-[30%] px-4 py-2 border rounded-md" placeholder="Start Session" required value="<%= editing ? student.StudentStartSession : '' %>"/>
+          <input type="text" name="StudentEndSession" class="w-[30%] px-4 py-2 border rounded-md ml-3" placeholder="End Session" required value="<%= editing ? student.StudentEndSession : '' %>"/>
+        </div>
+       
+        <!-- Upload Photo -->
+        <div>
+          <label class="block mb-1 font-medium">Upload Photo</label>
+          <!-- <input type="file" name="StudentPhotoFile"  class="w-full px-2 py-1 border rounded-md"  /> -->
+          <input type="text" name="StudentPhotoUrl"  class="w-full px-2 py-1 border rounded-md mt-2" placeholder="Enter photoUrl" value="<%= editing ? student.StudentPhotoUrl : '' %>" />
+        </div>
+  
+        <!-- Guardian Info -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 font-medium">Guardian's Name</label>
+            <input type="text" name="StudentGuardiansName" class="w-full px-4 py-2 border rounded-md" required value="<%= editing ? student.StudentGuardiansName : '' %>"/>
+          </div>
+          <div>
+            <label class="block mb-1 font-medium">Guardian's Phone</label>
+            <input type="tel" name="StudentGuardiansNumber" class="w-full px-4 py-2 border rounded-md" required value="<%= editing ? student.StudentGuardiansNumber : '' %>"/>
+          </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="text-center">
+          <input class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md transition-all duration-200" type="submit" value="<%= editing ? 'Update Student' : 'Add Student' %>">
+        </div>
+      </form>
+    </div>
+  </div>
+  </body>
+</html>
