@@ -1,0 +1,17 @@
+<%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/nav') %>
+  <main class="w-[100%] flex items-center justify-center">
+    <form action="/showMessage-page" method="POST" class="w-[80%]  border mt-10 rounded shadow-xl flex items-center justify-center flex-col">
+      <h1 class="text-2xl font-bold mt-4">Register Your Home on AiRBnB</h1>
+      <input class="outline-none border  w-[48%] p-1 rounded mt-4" type="text" name="houseName" placeholder="Enter Your House Name" required>
+      <input class="outline-none border  w-[48%] p-1 rounded mt-3" type="text" name="price" placeholder="Price Per Night" required>
+      <input class="outline-none border  w-[48%] p-1 rounded mt-3" type="text" name="location" placeholder="Location" required>
+      <input class="outline-none border  w-[48%] p-1 rounded mt-3" type="text" name="rating" placeholder="Rating" required>
+      <input class="outline-none border  w-[48%] p-1 rounded mt-3" type="text" name="photoUrl" placeholder="Enter Photo URL" required>
+      <input class="border p-1 rounded   w-[48%] bg-slate-600 text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out mb-4 mt-5" type="submit" value="submit">
+    </form>
+  </main>
+</body>
+</html>
