@@ -1,0 +1,10 @@
+<header class="w-[100%] h-[60px] bg-slate-600 ">
+  <ul class="flex flex-row gap-12 leading-[60px] pl-10">
+    <li><a class="<%=  currentPage === 'Home' ? 'bg-gray-400 text-black' : 'hover:bg-gray-400' %> text-white  hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="/">Homes</a></li>
+    <li><a class="<%=  currentPage === 'Home List' ? 'bg-gray-400 text-black' : 'hover:bg-gray-400' %> text-white  hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="homelist">Homes List</a></li>
+    <li><a class="<%=  currentPage === 'bookings' ? 'bg-gray-400 text-black' : 'hover:bg-gray-400' %> text-white  hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="bookings">Bookings</a></li>
+    <li><a class="<%= currentPage === 'favourites' ? 'bg-gray-400 text-black' : 'hover:bg-gray-400' %> text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="/favourites">Favourites</a></li>
+    <li><a class="<%= currentPage === 'Host Home List' ? 'bg-gray-400 text-black' : 'hover:bg-gray-400' %> text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="/host-home-list">Host Home</a></li>
+    <li><a class="<%= currentPage === 'Add Home' ? 'bg-gray-400 text-black' : 'hover:bg-gray-400' %> text-white hover:bg-gray-400 hover:text-black transition duration-700 ease-in-out p-1.5 rounded" href="/add-home-page">Add Home</a></li>
+  </ul>
+</header> 
